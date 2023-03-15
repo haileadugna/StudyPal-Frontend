@@ -1,0 +1,32 @@
+<div [ngClass]="'post'">
+    
+
+    <div class="account" >
+        <!-- <img [ngClass]="'account-img'" src = "{{post.img}}" alt="">
+        <div class="name">{{userInfo.id}}</div>
+        <div class="user_name">{{userInfo.title}}</div> -->
+    </div>
+
+
+<div [ngClass]="'body'">
+    <h2 class="title">
+        {{post.title}}
+    </h2>
+
+    <p class="text">
+        {{post.desc}}
+    </p>
+
+    <div [ngClass]="'footer'">
+        <div [ngClass]="'tags'">
+            <mat-chip-set>
+                <mat-chip *ngFor="let tag of post.tag">
+                    {{tag}}
+                </mat-chip>
+
+            </mat-chip-set>
+        </div>
+        <button (click)="apply()" mat-flat-button color="primary">{{applyText}}</button>
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+<div class="card">
+    <h1>{{task.title}}</h1>
+    <div class="body">
+        <p>
+            {{task.desc}}
+        </p>
+    </div>
+    
+    <div class="tags">
+        <mat-chip-set>
+            <mat-chip *ngFor="let tag for task.tag">{{tag}}</mat-chip>
+        </mat-chip-set>
+    </div>
+    <div class="info">
+        <p>Asked By: Daniel</p>
+        <div class="buttons">
+            <ngx-star-rating  [id]="'rating'" [disabled]="true"></ngx-star-rating>
+        </div>
+    </div>
+</div>

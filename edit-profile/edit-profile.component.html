@@ -1,0 +1,49 @@
+<div class="container">
+    <h1>Edit profile</h1>
+    <form #editProfileForm="ngForm" (ngSubmit)="onFormSubmit(editProfileForm.value)">
+        <div class="profile-pic-edit">
+            <div class="profile-pic">
+                <img #dislayImg id="displayImg" src="../../assets/testimonials/chan_a.png" alt="">
+            </div>
+            <button type="button" mat-raised-button (click)="profilePicInput.click()">Choose Image</button>
+            <input hidden accept="image/*" (change)="displayNewProfile()" id="pfpInput"  #profilePicInput type="file">
+        </div>
+        <div class="info">
+            <mat-form-field appearance="fill">
+                <mat-label>Full Name</mat-label>
+                <input name="fullname" ngModel matInput placeholder="Full Name">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Bio</mat-label>
+                <textarea name="bio" ngModel matInput></textarea>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Phone Number</mat-label>
+                <input name="phone" ngModel matInput placeholder="Full Name">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Telegram Username</mat-label>
+                <input name="telegram" ngModel matInput placeholder="@username">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input name="email" ngModel matInput placeholder="email@example.com">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Hourly rate</mat-label>
+                <input name="tutorfee" ngModel matInput placeholder="Hourly rate">
+            </mat-form-field>
+            <div class="resume">
+                <div>
+                    <h2>Resume</h2>
+                </div>
+                <button type="button" mat-raised-button (click)="resumeInput.click()">Choose File</button>
+                <input (change)="displayFileNames()" hidden #resumeInput type="file" id="resume">
+                <div id="files"></div>
+            </div>
+            <div class="button-container">
+                <button id="confirm-btn" type="submit" mat-flat-button color="primary">confirm</button>
+            </div>
+        </div>
+    </form>
+</div>

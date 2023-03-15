@@ -1,0 +1,34 @@
+<div class="post">
+  <div class="account">
+    <div class="account-part">
+      <div class="account-img"></div>
+      <div class="name">John Doe</div>
+      <div class="user_name">@johndoe</div>
+    </div>
+
+    <div class="edit" (click)="showEditForm()">
+      <mat-icon>edit</mat-icon>
+    </div>
+  </div>
+
+  <hr />
+  <div class="body">
+    <h2 class="title">{{post.title}}</h2>
+
+    <p class="text">
+     {{post.desc}}
+    </p>
+
+    <div class="footer">
+      <div class="tags">
+        <mat-chip-set>
+          <mat-chip *ngFor="let tag of post.tag">{{tag}}</mat-chip>
+        </mat-chip-set>
+      </div>
+
+      <button mat-flat-button (click)="showApplicants()" color="primary">view applicants</button>
+    </div>
+
+    
+  </div>
+</div>
